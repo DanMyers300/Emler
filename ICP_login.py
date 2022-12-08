@@ -2,7 +2,6 @@ import selenium
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 import time
-import pygsheets
 import pyautogui
 import datetime
 from datetime import datetime, timedelta
@@ -15,16 +14,6 @@ two_weeks_from_now = current_date + timedelta(weeks=2)
 
 #screensize for autogui
 screenWidth, screenHeight = pyautogui.size()
-
-
-#Auth
-client = pygsheets.authorize(service_account_file="python-368100-60c4ae6bb5dd.json")
-
-
-#Select Spreadsheet and Worksheet
-spreadsht = client.open("PF Office Hub - Fall 2022")
-worksht = spreadsht.worksheet("title", "Class List Report")
-
 
 #Login to ICP
 driver = webdriver.Chrome()
@@ -53,6 +42,27 @@ time.sleep(20)
 pyautogui.click(700,430)
 
 #Copy everything and paste into google sheets
+pyautogui.hotkey('ctrl', 'a', interval=0.25)
+pyautogui.hotkey('ctrl', 'c', interval=0.25)
+
+driver.get('https://docs.google.com/spreadsheets/d/1d5fy5eEvuOkgJsr2V2ChUbtltCoA9UzOqnlS13GkAVo/edit#gid=533897983')
+pyautogui.hotkey('ctrl', 'tab', interval=0.25)
+g_id_box = driver.find_element('name', 'identifier')
+g_id_box.send_keys('prestonforest@emlerswimschool.com')
+pyautogui.click(635,730)
+time.sleep(2)
+g_pass_box = driver.find_element('name', 'Passwd')
+g_pass_box.send_keys('iswimemler')
+pyautogui.click(635,700)
+time.sleep(7)
+pyautogui.click(600,1000)
+time.sleep(1)
+pyautogui.click(500,1000)
+time.sleep(3)
+pyautogui.moveTo(200, 975)
+pyautogui.dragTo(300, 975, 1, button='left')
+pyautogui.click(700,300)
+pyautogui.hotkey('ctrl', 'v', interval=0.25)
 
 #wait so screen stays up
 time.sleep(100)
