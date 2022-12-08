@@ -4,11 +4,14 @@ from selenium.webdriver.support.ui import Select
 import time
 import pygsheets
 import pyautogui
+import datetime
+from datetime import datetime, timedelta
 
+# Get the current date
+current_date = datetime.now()
 
-#Calculate two weeks from todays date for class list report
-
-
+# Calculate the date two weeks from the current date
+two_weeks_from_now = current_date + timedelta(weeks=2)
 
 #screensize for autogui
 screenWidth, screenHeight = pyautogui.size()
@@ -41,15 +44,15 @@ time.sleep(1)
 pyautogui.click(500,580)
 date_picker = driver.find_element('name', 'endDate')
 date_picker.click()
-#need to write the date code so it gets the correct date
-pyautogui.write('12/21/2022', interval=0.25)
+pyautogui.write(two_weeks_from_now.strftime("%m/%d/%Y"), interval=0.25)
 pyautogui.press('esc')
 pyautogui.moveTo(400, 300)
 pyautogui.drag(0, 400, 2, button='middle')
 pyautogui.click(300,900)
 time.sleep(20)
 pyautogui.click(700,430)
-#Still need to select everything and add it to clipboard
+
+#Copy everything and paste into google sheets
 
 #wait so screen stays up
 time.sleep(100)
