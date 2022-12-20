@@ -1,4 +1,5 @@
 import pygsheets
+import time
 
 # Authorize pygsheets using the JSON file
 gc = pygsheets.authorize(service_file='python-368100-5f317bcc7d43.json')
@@ -18,5 +19,7 @@ destination_sheet = gc.open("PF Office Hub - Fall 2022")
 # Select the worksheet with the title "Enrollment List" in the destination sheet
 destination_worksheet = destination_sheet.worksheet_by_title("Enrollment List")
 
-#Paste Values
 destination_worksheet.update_values('A1',source_values)
+
+print('Success!')
+time.sleep(10)
