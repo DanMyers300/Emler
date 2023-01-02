@@ -7,6 +7,9 @@ import pygsheets
 import datetime
 from datetime import datetime, timedelta
 
+# Authorize pygsheets using the JSON file
+gc = pygsheets.authorize(service_file='python-368100-5f317bcc7d43.json')
+
 # Get the current date
 current_date = datetime.now()
 
