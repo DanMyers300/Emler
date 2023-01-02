@@ -50,7 +50,6 @@ pyautogui.click(700,430)
 #Copy everything
 pyautogui.hotkey('ctrl', 'a', interval=0.25)
 pyautogui.hotkey('ctrl', 'c', interval=0.25)
-copied_values = pc.paste()
 
 #And paste into google sheets
 destination_sheet = gc.open("PF Office Hub - Fall 2022")
