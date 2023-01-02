@@ -53,7 +53,7 @@ pyautogui.hotkey('ctrl', 'a', interval=0.25)
 pyautogui.hotkey('ctrl', 'c', interval=0.25)
 
 #Add copied information into a dataframe
-df = pd.read_clipboard()
+df = pd.read_clipboard(sep='\\s+', )
 
 #And paste into google sheets
 destination_sheet = gc.open("PF Office Hub - Fall 2022")
