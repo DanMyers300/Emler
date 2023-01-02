@@ -54,7 +54,7 @@ pyautogui.hotkey('ctrl', 'c', interval=0.25)
 #And paste into google sheets
 destination_sheet = gc.open("PF Office Hub - Fall 2022")
 destination_worksheet = destination_sheet.worksheet_by_title("Class List Report")
-destination_worksheet.update_values('K1',copied_values)
+destination_worksheet.update_values('K1', pc.paste())
 
 #wait so screen stays up for 10 seconds
 print('Success!')
