@@ -5,8 +5,10 @@ import time
 import pyautogui
 import pyperclip as pc
 import pygsheets
+import pandas as pd
 import datetime
 from datetime import datetime, timedelta
+
 
 # Authorize pygsheets using the JSON file
 gc = pygsheets.authorize(service_file='python-368100-5f317bcc7d43.json')
@@ -50,10 +52,13 @@ pyautogui.click(700,430)
 pyautogui.hotkey('ctrl', 'a', interval=0.25)
 pyautogui.hotkey('ctrl', 'c', interval=0.25)
 
+#Add copied information into a dataframe
+df = pd.read_clipboard(header=None)
+
 #And paste into google sheets
 destination_sheet = gc.open("PF Office Hub - Fall 2022")
 destination_worksheet = destination_sheet.worksheet_by_title("Class List Report")
-destination_worksheet.update_values('K1', values)
+destination_worksheet.update_values('K1', df)
 
 #wait so screen stays up for 10 seconds
 print('Success!')
