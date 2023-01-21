@@ -19,21 +19,27 @@ login_button = driver.find_element('id', 'loginbutton')
 login_button.click()
 driver.get('https://app.iclasspro.com/a/emlerdallas#!/report/classes/4')
 
-#run the report
-time.sleep(2)
+#Open the print dialog
+time.sleep(5)
 pyautogui.click(400,550)
 pyautogui.click(400,620)
-time.sleep(1)
+time.sleep(2)
 pyautogui.drag(0, 400, 2, button='middle')
 pyautogui.click(400,900)
 time.sleep(30)
 pyautogui.click(720,420)
 time.sleep(2)
+
+#Send Print information
 pyautogui.hotkey('ctrl', 'p', interval=0.25)
 time.sleep(5)
 pyautogui.click(800,450)
 time.sleep(2)
 pyautogui.drag(0, 400, 2, button='middle')
-pyautogui.click(800,460)
-pyautogui.click(800,710)
+
+#This uses the system dialog instead of chrome print 
+pyautogui.hotkey('ctrl', 'shift', 'p', interval=0.25)
+pyautogui.click(280,420)
+
+#Wait so the dialog stays open
 time.sleep(10)
