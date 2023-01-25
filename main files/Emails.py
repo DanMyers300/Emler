@@ -1,7 +1,7 @@
 import httplib2
 import os
 import oauth2client
-from oauth2client import client, tools
+from oauth2client import client, tools, file
 import base64
 from email import encoders
 
@@ -56,7 +56,7 @@ def get_credentials():
     credentials = store.get()
 
     if not credentials or credentials.invalid:
-        CLIENT_SECRET_FILE = 'client_id to send Gmail.json'
+        CLIENT_SECRET_FILE = 'client_secret_1031754928166-tq6gvkv761a2iciqa9j1krj39ecg01uj.apps.googleusercontent.com.json'
         APPLICATION_NAME = 'Gmail API Python Send Email'
         #The scope URL for read/write access to a user's calendar data  
 
@@ -256,7 +256,7 @@ def main():
     subject = "subject test1"
     message_text_html  = r'Hi<br/>Html <b>hello</b>'
     message_text_plain = "Hi\nPlain Email"
-    attached_file = r'C:\Users\Me\Desktop\audio.m4a'
+    attached_file = r'C:\Users\Me\Documents\Python\Emails\contacts_files.csv'
     create_message_and_send(sender, to, subject, message_text_plain, message_text_html, attached_file)
 
 
