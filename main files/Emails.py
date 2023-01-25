@@ -1,5 +1,6 @@
 import httplib2
 import os
+import csv
 import oauth2client
 from oauth2client import client, tools, file
 import base64
@@ -249,6 +250,10 @@ def send_Message_with_attachment(service, user_id, message_with_attachment, mess
     except errors.HttpError as error:
         print (f'An error occurred: {error}')
 
+with open("contacts_files.csv") as csvFile:   #open the file
+  CSVdata = csv.reader(csvFile, delimiter=',')  #read the data
+  for row in CSVdata:   #loop through each row
+    print (row)   #print the data
 
 def main():
     to = "contact+python@danmyers.net"
