@@ -250,18 +250,24 @@ def send_Message_with_attachment(service, user_id, message_with_attachment, mess
     except errors.HttpError as error:
         print (f'An error occurred: {error}')
 
-with open("contacts_files.csv") as csvFile:   #open the file
-  CSVdata = csv.reader(csvFile, delimiter=',')  #read the data
-  next(csvFile)
-  for row in CSVdata:   #loop through each row
-    print (row)   #print the data
+with open("contacts_files.csv") as file:   #open the file
+    reader = csv.reader(file)  #read the data
+    next(reader)
+    for name, email, grade in reader:   #loop through each row
+        print (email)   #print the data
+
+"""
+The current bug is a logic problem. The above loop is iterating through and printing all the emails and then it sends only the last one
+This is because the loop is running and then after the loop is over it sends the messages. I need it to run the loop, send the message and
+then run the loop on the next row
+"""
 
 def main():
-    to = "contact+python@danmyers.net"
+    to = f"{email}"
     sender = "prestonforest@emlerswimschool.com"
     subject = "subject test1"
-    message_text_html  = r'Hi<br/>Html <b>hello</b>'
-    message_text_plain = "Hi\nPlain Email"
+    message_text_html  = rf'Hi<br/>{name} <b>hello</b>'
+    message_text_plain = f"{name}"
     attached_file = r'C:\Users\Me\Documents\Python\Emails\contacts_files.csv'
     create_message_and_send(sender, to, subject, message_text_plain, message_text_html, attached_file)
 
