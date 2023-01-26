@@ -252,6 +252,7 @@ def send_Message_with_attachment(service, user_id, message_with_attachment, mess
 
 with open("contacts_files.csv") as csvFile:   #open the file
   CSVdata = csv.reader(csvFile, delimiter=',')  #read the data
+  next(csvFile)
   for row in CSVdata:   #loop through each row
     print (row)   #print the data
 
