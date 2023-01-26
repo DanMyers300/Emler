@@ -257,15 +257,15 @@ def main():
     message_text_html  = rf'''
     Hello {Guardian},
 
-    I'm reaching out because I noticed that we currently have an outstanding balance on your account of:
-    {Due}
+    <br>I'm reaching out because I noticed that we currently have an outstanding balance on your account of:</br>
+    <br>{Due}</br>
 
-    Please log onto your account on app.iclasspro.com/portal/emlerdallas to make a payment
+    <br>Please log onto your account on app.iclasspro.com/portal/emlerdallas to make a payment</br>
     You can also call us at 972.851.7946
-    
-    Swimcerely,
-    Emler Swim School
-    Preston-Forest
+    <br> </br>
+    <br>Swimcerely,</br>
+    <br>Emler Swim School</br>
+    <br>Preston-Forest</br>
     '''
     message_text_plain = f"Sent to {Guardian}"
     attached_file = r'C:\Users\NA'
