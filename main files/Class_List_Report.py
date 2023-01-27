@@ -28,7 +28,7 @@ driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 time.sleep(2)
 html_button = driver.find_element(By.XPATH, "//*[@id='appdata-container']/icp-single-page-report-filters/div/div[2]/div/div[2]/div/div[3]/div[1]/button")
 html_button.click()
-time.sleep(15)
-#To-Do Click on drop down button
+time.sleep(20)
+pyautogui.click(730,420)
 #To-Do print
 time.sleep(1000)
