@@ -30,5 +30,17 @@ html_button = driver.find_element(By.XPATH, "//*[@id='appdata-container']/icp-si
 html_button.click()
 time.sleep(20)
 pyautogui.click(730,420)
-#To-Do print
-time.sleep(1000)
+time.sleep(5)
+pyautogui.keyDown('ctrl')
+pyautogui.press('s')
+pyautogui.keyUp('ctrl')
+time.sleep(2)
+pyautogui.press('enter', presses=2)
+'''
+To-Do:
+
+        1) Remove time.sleep(s) as it is bad practice
+        2) Currently just saves the file, write script to print it using defualt printer
+        3) Remove pyautogui as it is bad practice
+
+'''
