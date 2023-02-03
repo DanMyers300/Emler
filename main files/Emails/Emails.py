@@ -253,19 +253,23 @@ def send_Message_with_attachment(service, user_id, message_with_attachment, mess
 def main():
     to = f"{Email}"
     sender = "prestonforest@emlerswimschool.com"
-    subject = "Emler Swim School Outstanding Balance"
+    subject = "Emler Swim School Spring Semester"
     message_text_html  = rf'''
-    Hello {Guardian},
+    <html>
+<head>e
+	<title></title>
+</head>
+<body>
+Hello {Guardian},<br />
 
-    <br>I'm reaching out because I noticed that we currently have an outstanding balance on your account of:</br>
-    <br>{Due}</br>
 
-    <br>Please log onto your account on app.iclasspro.com/portal/emlerdallas to make a payment</br>
-    You can also call us at 972.851.7946
-    <br> </br>
-    <br>Swimcerely,</br>
-    <br>Emler Swim School</br>
-    <br>Preston-Forest</br>
+
+Swimcerely,<br />
+Dan<br />
+Emler Swim School<br />
+Preston-Forest
+</body>
+</html>
     '''
     message_text_plain = f"Sent to {Guardian}"
     attached_file = r'C:\Users\NA'
@@ -275,6 +279,6 @@ def main():
 with open("contacts_files.csv") as file:   #open the file
     reader = csv.reader(file)  #read the data
     next(reader)
-    for Due, Student, Guardian, Email in reader:   #loop through each row
+    for Guardian, Email in reader:   #loop through each row
         if __name__ == '__main__':
             main()
