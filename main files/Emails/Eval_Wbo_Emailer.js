@@ -9,16 +9,7 @@ function sendEmail() {
   const sheet1 = ss.getSheetByName('WBO/Eval List');
   const n = sheet1.getLastRow();
   
-  // Calculate the date and then format it into mm/dd/yyyy
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  let mm = today.getMonth() + 1; // Months start at 0!
-  let dd = today.getDate();
-
-  if (dd < 10) dd = '0' + dd;
-  if (mm < 10) mm = '0' + mm;
-
-  const formattedToday = mm + '/' + dd + '/' + yyyy;
+  const todaysDate = Utilities.formatDate(new Date(), "GMT+1". "MM/dd/yyyy");
 
   // Add an If statement to the next set of code so that it only sends a message if the date is past the current date. If it's not then it returns: "Failed"
 
