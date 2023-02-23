@@ -9,6 +9,8 @@ function sendEmail() {
   let m0 = today.getMonth() + 1;
   let d0 = today.getDate();
 
+// This is currently failing because of JS NAN error
+
   for (let i = 2; i < lastRow+1; i++) {
     x = Date.parse(values[i]);
     const date = new Date(x);
@@ -20,10 +22,10 @@ function sendEmail() {
     const emailAddress = `contact@danmyers.net`; // Read email in column J
     const message = "Hello world!";
     const subject = "Hello world!";
-    console.log(emailAddress, message, subject);
+
+    // console.log(emailAddress, message, subject);
     //MailApp.sendEmail(emailAddress, subject, message);
     } else {
       console.log(`failed`);
     }
   }
-}
