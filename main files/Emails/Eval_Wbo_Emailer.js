@@ -1,31 +1,23 @@
-// This function is to automatically email the evals and wbos that are enrolled in the future
-
 {/* REMOVE TO ACTIVATE
 
-// At the moment this function only loops through the rows. For every row it sends the same email to the same email address.
-
 function sendEmail() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet1 = ss.getSheetByName('WBO/Eval List');
-  const lastRow = sheet1.getLastRow();
-  
+  const sheet = SpreadsheetApp.getActive().getSheetByName('WBO/Eval List');
+  const dataRange = sheet.getDataRange();
+  const lastRow = data_range.getLastRow();
+
   const todaysDate = Utilities.formatDate(new Date(), "GMT+1". "MM/dd/yyyy");
 
-  // Add an If statement to the next set of code so that it only sends a message if the date is past the current date. If it's not then it returns: "Failed"
+  const evalDate = // To-Do: read values from column 
 
-  for (let i = 2; i < n+1; i++) {
-
-    // Change this line so that it picks the email out of J instead of just sending it to myself.
-
-    const emailAddress = `contact@danmyers.net`;
-
-
-    // This can stay the same
+  for (let i = 2; i < lastRow+1; i++) {
+    if(todaysDate < evalDate) {
+    const emailAddress = `contact@danmyers.net`; // Read email in column J
     const message = "Hello world!";
     const subject = "Hello world!";
 
     MailApp.sendEmail(emailAddress, subject, message);
+    }
+    console.log(`Failed`);
   }
 }
-
-*/} //REMOVE TO ACTIVATE
+REMOVE TO ACTIVATE */}
