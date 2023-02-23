@@ -25,7 +25,7 @@ function sendEmail() {
 
     // console.log(emailAddress, message, subject);
     //MailApp.sendEmail(emailAddress, subject, message);
-    } else {
-      console.log(`failed`);
+
     }
   }
+}
