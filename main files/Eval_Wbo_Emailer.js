@@ -1,3 +1,4 @@
+// This is for the google apps script for the office hub in google sheets
 // This function is to automatically email the evals and wbos that are enrolled in the future
 
 {/* REMOVE TO ACTIVATE
