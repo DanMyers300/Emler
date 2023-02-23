@@ -7,7 +7,7 @@
 function sendEmail() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet1 = ss.getSheetByName('WBO/Eval List');
-  const n = sheet1.getLastRow();
+  const lastRow = sheet1.getLastRow();
   
   const todaysDate = Utilities.formatDate(new Date(), "GMT+1". "MM/dd/yyyy");
 
