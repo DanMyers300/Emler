@@ -20,9 +20,10 @@ function sendEmail() {
     const emailAddress = `contact@danmyers.net`; // Read email in column J
     const message = "Hello world!";
     const subject = "Hello world!";
-
     console.log(emailAddress, message, subject);
     //MailApp.sendEmail(emailAddress, subject, message);
-    } console.log(`Failed`);
+    } else {
+      console.log(`failed`);
+    }
   }
 }
