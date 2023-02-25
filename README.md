@@ -1,2 +1,2 @@
 # Emler_Automation
-Playing with automation at emler
+Playing with automation at Emler
