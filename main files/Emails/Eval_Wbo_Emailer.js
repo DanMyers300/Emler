@@ -8,8 +8,18 @@ function sendEmails() {
     if (dataC == '' || dataJ == '') {
       Logger.log('no data');
     } else {
-      Logger.log('data in column C: ' + dataC);
-      Logger.log('data in column J: ' + dataJ);
+      var today = new Date();
+      var dateC = new Date(dataC);
+      
+      if (dateC > today) {
+        var emailAddress = dataJ;
+        var message = 'Reminder: The date in column C is in the future.';
+        var subject = 'Future Date Reminder';
+        MailApp.sendEmail(emailAddress, subject, message);
+        Logger.log('Reminder email sent to ' + emailAddress);
+      } else {
+        Logger.log('Date in column C is not in the future');
+      }
     }
   }
 }
