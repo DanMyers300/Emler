@@ -1,31 +1,22 @@
-// This function is currently failing because m, d, and y are returning NAN. It seems like it's a parsing error from google sheets
-
-function sendEmail() {
-  const sheet = SpreadsheetApp.getActive().getSheetByName('WBO/Eval List');
-  const dataRange = sheet.getDataRange();
-  const values = dataRange.getValues();
-  const lastRow = dataRange.getLastRow();
-
-  for (let i = 2; i < lastRow+1; i++) {
-    let today = new Date();
-    let y0 = today.getFullYear();
-    let m0 = today.getMonth() + 1;
-    let d0 = today.getDate();
+function sendEmails() {
+  var spreadsheet = SpreadsheetApp.openById("1VOrghqm-GxEsdgcuXBHt8neC8mTBtlhqiSsy-VyWKCU");
+  var sheet = spreadsheet.getSheetByName("WBO/Eval List");
+  var startRow = 2; // Start at second row to skip header row
+  var numRows = sheet.getLastRow() - 1; // Number of rows to process
+  
+  // Iterate through rows
+  for (var i = 0; i < numRows; i++) {
+    var row = sheet.getRange(startRow + i, 1, 1, sheet.getLastColumn()).getValues()[0];
+    var dateValue = row[1];
+    var email = row[9];
     
-    x = Date.parse(values[i]);
-    const date = new Date(x);
-    let y = date.getFullYear();
-    let m = date.getMonth() + 1;
-    let d = date.getDate();
-    
-    if(y0 === y && m0 === m && d0 === d) {
-    const emailAddress = `contact@danmyers.net`; // Read email in column J
-    const message = "Hello world!";
-    const subject = "Hello world!";
-
-    console.log(emailAddress, message, subject);
-    //MailApp.sendEmail(emailAddress, subject, message);
-
-    } console.log(m,d,y,y0,m0,d0)
+    // Check if date is later than today's date
+    if (dateValue instanceof Date && dateValue.getTime() > new Date().getTime()) {
+      // Send email
+      var subject = "Reminder: Upcoming Event";
+      var body = "This is a reminder that the event is coming up soon.";
+      MailApp.sendEmail(email, subject, body);
+      console.log(dateValue);
+    }
   }
 }
