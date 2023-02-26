@@ -10,6 +10,7 @@ function sendEvaluationWaterBabyOrientationEmails() {
     } else {
       var today = new Date();
       var dateC = new Date(dataC);
+      var readableDate = Utilities.formatDate(dateC, "CST", "MM-dd-YYYY");
 
       if (dateC > today) {
         var emailAddress = dataJ;
@@ -17,7 +18,7 @@ function sendEvaluationWaterBabyOrientationEmails() {
         var message = 
           '<p>Hello Emler Family,</p>'
             +
-          `<p>This is a confirmation email for your upcoming evaluation for ${dateC}. We are very excited to start swimming with you!</p>` 
+          `<p>This is a confirmation email for your upcoming evaluation for ${readableDate}. We are very excited to start swimming with you!</p>` 
             +
           '<p>Please let us know if you have any questions or concerns.</p>'
             +
