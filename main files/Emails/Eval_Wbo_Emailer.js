@@ -10,17 +10,17 @@ function sendEvaluationWaterBabyOrientationEmails() {
     } else {
       var today = new Date();
       var dateC = new Date(dataC);
-      
+
       if (dateC > today) {
         var emailAddress = dataJ;
         var subject = 'Evaluation Confirmation';
         var message = 
           '<p>Hello Emler Family,</p>'
             +
-          '<p>This is a confirmation email for your upcoming evaluation. We are very excited to start swimming with you!</p>' 
+          `<p>This is a confirmation email for your upcoming evaluation for ${dateC}. We are very excited to start swimming with you!</p>` 
             +
           '<p>Please let us know if you have any questions or concerns.</p>'
-          +
+            +
           '<p>Swimcerely,<br>Emler Swim School</br><br>Preston Forest</br></p>';
 
         // create an HTML template
