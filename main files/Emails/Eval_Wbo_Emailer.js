@@ -1,27 +1,15 @@
 function sendEmails() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = ss.getSheetByName(`WBO/Eval List`);
-
-  const startRow = 2; // Start at second row to skip header row
-  const numRows = sheet.getLastRow() - 1; // Number of rows to process
-
-  for (var i = 0; i < numRows; i++) {
-    var row = sheet.getRange(startRow + i, 1, 1, sheet.getLastColumn()).getValues()[0];
-    var dateValue = row[2];
-    var email = row[9];
-
-    // Skip row if email is empty
-    if (!email) {
-      continue;
-    }
-
-    if (dateValue instanceof Date && dateValue.getTime() > new Date().getTime()) {
-      // Send email
-      var subject = "Reminder: Upcoming Event";
-      var body = "This is a reminder that the event is coming up soon.";
-      //MailApp.sendEmail(email, subject, body);
-      console.log(row);
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('WBO/Eval List').getDataRange().getValues();
+  
+  for (var i = 2; i < sheet.length; i++) {
+    var dataC = sheet[i][2];
+    var dataJ = sheet[i][9];
+    
+    if (dataC == '' || dataJ == '') {
+      Logger.log('no data');
+    } else {
+      Logger.log('data in column C: ' + dataC);
+      Logger.log('data in column J: ' + dataJ);
     }
   }
-  console.log("end of data");
 }
