@@ -22,7 +22,7 @@ function sendEvaluationWaterBabyOrientationEmails() {
             +
           '<p>Please let us know if you have any questions or concerns.</p>'
             +
-          '<p>Swimcerely,<br>Emler Swim School</br><br>Preston Forest</br><p>Contact Us:<ul><li>Call: (972) 851-7946</li><li>Text: (469) 663-5083</li><li>Email: Prestonforest@emlerswimschool.com</li></ul></p></p>';
+          '<p>Swimcerely,<br>Emler Swim School</br><br>Preston Forest</br><p><small>Contact Us:<ul><li>Call: (972) 851-7946</li><li>Text: (469) 663-5083</li><li>Email: Prestonforest@emlerswimschool.com</li></ul></p></small></p>';
 
         // create an HTML template
         var template = HtmlService.createHtmlOutput(message);
