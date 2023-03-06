@@ -14,11 +14,11 @@ function sendEvaluationWaterBabyOrientationEmails() {
 
       if (dateC > today) {
         var emailAddress = dataJ;
-        var subject = 'Evaluation Confirmation';
+        var subject = 'Evaluation/Waterbaby Orientation Confirmation';
         var message = 
           '<p>Hello Emler Family,</p>'
             +
-          `<p>This is a confirmation email for your upcoming evaluation for ${readableDate}. We are very excited to start swimming with you!</p>` 
+          `<p>This is a confirmation email for your upcoming evaluation or Waterbaby orientation for ${readableDate}. We are very excited to start swimming with you!</p>` 
             +
           '<p>Please let us know if you have any questions or concerns.</p>'
             +
