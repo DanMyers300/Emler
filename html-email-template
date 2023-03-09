@@ -364,8 +364,8 @@ style="border:0;display:block;outline:none;text-decoration:none;height:auto;widt
         <tr>
 
               <td>
-            <![endif]-->
-                              <table align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" style="float:none;display:inline-table;">
+            <![endif]--> <!-- THIS ONE IS COMMENTED OUT -->
+                              <!--<table align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" style="float:none;display:inline-table;">
                                 <tbody><tr>
                                   <td style="padding:4px;">
                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-radius:3px;width:18px;">
@@ -379,7 +379,7 @@ style="border:0;display:block;outline:none;text-decoration:none;height:auto;widt
                                     </tbody></table>
                                   </td>
                                 </tr>
-                              </tbody></table>
+                              </tbody></table>-->
                               <!--[if mso | IE]>
               </td>
 
@@ -391,7 +391,7 @@ style="border:0;display:block;outline:none;text-decoration:none;height:auto;widt
                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-radius:3px;width:18px;">
                                       <tbody><tr>
                                         <td style="font-size:0;height:18px;vertical-align:middle;width:18px;">
-                                          <a href="#" target="_blank" style="color: #fc4f95; text-decoration: none; font-weight: bold;">
+                                          <a href="https://www.facebook.com/emlerswimschool/" target="_blank" style="color: #fc4f95; text-decoration: none; font-weight: bold;">
                                             <img alt="facebook-logo" height="18" src="https://codedmails.com/images/social/black/facebook-logo-transparent-black.png" style="border-radius:3px;display:block;" width="18" />
                                           </a>
                                         </td>
@@ -411,7 +411,7 @@ style="border:0;display:block;outline:none;text-decoration:none;height:auto;widt
                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-radius:3px;width:18px;">
                                       <tbody><tr>
                                         <td style="font-size:0;height:18px;vertical-align:middle;width:18px;">
-                                          <a href="#" target="_blank" style="color: #fc4f95; text-decoration: none; font-weight: bold;">
+                                          <a href="https://www.instagram.com/emlerswimschool" target="_blank" style="color: #fc4f95; text-decoration: none; font-weight: bold;">
                                             <img alt="instagram-logo" height="18" src="https://codedmails.com/images/social/black/instagram-logo-transparent-black.png" style="border-radius:3px;display:block;" width="18" />
                                           </a>
                                         </td>
@@ -431,7 +431,7 @@ style="border:0;display:block;outline:none;text-decoration:none;height:auto;widt
                                     <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-radius:3px;width:18px;">
                                       <tbody><tr>
                                         <td style="font-size:0;height:18px;vertical-align:middle;width:18px;">
-                                          <a href="#" target="_blank" style="color: #fc4f95; text-decoration: none; font-weight: bold;">
+                                          <a href="https://www.youtube.com/@emlerswimschool1975" target="_blank" style="color: #fc4f95; text-decoration: none; font-weight: bold;">
                                             <img alt="youtube-logo" height="18" src="https://codedmails.com/images/social/black/youtube-logo-transparent-black.png" style="border-radius:3px;display:block;" width="18" />
                                           </a>
                                         </td>
