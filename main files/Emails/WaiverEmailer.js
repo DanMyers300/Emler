@@ -6,8 +6,8 @@ function sendWaiverEmails() {
     var parentWaiverEmail = sheet[i][17];
     var parentWaiverName = sheet[i][12]
     
-    if (parentWaiverAccepted == '') {
-      Logger.log('Already Accepted');
+    if (parentWaiverEmail == ``) {
+      Logger.log(`No Email`);
     } else {
 
       if (!parentWaiverAccepted == ``) {
